@@ -1,9 +1,8 @@
 <h1>Residential Sleep Life</h1>
 
-<div id="calendar"></div>
+<div>
+  Search:
+  <input ng-model="query">
+</div>
 
-<ul>
-  <li ng-repeat="homes in filteredHomes">
-    {{homes.Site}}: {{homes.Individual}}: {{ homes.Date }}: {{ homes.Task }}: {{homes.Score}}</li>
-</ul>
-
+<div class="container-fluid" id="calendar"> </div>
