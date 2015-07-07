@@ -1,5 +1,4 @@
-#calendar.header{
-        left: 'prev,next today';
-        center: 'title';
-        right: 'month,agendaWeek,agendaDay;
-      }
+.fc-button-group,
+.fc button {
+  display: inline-block;
+}
