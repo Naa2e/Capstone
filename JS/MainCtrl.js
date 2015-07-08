@@ -8,6 +8,9 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "$http",
         console.log('$scope.homes', $scope.homes)
 
         $scope.sortType = 'Site';
+        $scope.sortReverse = false;
+        $scope.searchSite = ' ';
+        console.log('$scope.sortType', $scope.sortType)
 
 
         var homesArray = []
@@ -38,7 +41,5 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "$http",
         //             events: homesArray
         //         });
         //     });
-}]);
-
-
-
+    }
+]);
