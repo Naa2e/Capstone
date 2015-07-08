@@ -1,13 +1,37 @@
 <h1>Residential Sleep Life</h1>
-<div>
-    Search:
-
-<p>Sort Type: {{ sortType }}</p>
-<ul ng-repeat="currentHome in homes">
-
- <!--    <input type="text" ng-model="search" />
+<div class="alert alert-info">
+    <p>Sort by: {{ sortType }}</p>
+    <p>Sort Reverse: {{ sortReverse }}</p>
+    <p>Whachu looking 4: {{ searchSite }}</p>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>
+                Date
+            </td>
+            <td>
+                Individual
+            </td>
+            <td>
+                Score
+            </td>
+            <td>
+                Site
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="currentHome in homes">
+            <td>{{ currentHome.Date }}</td>
+            <td>{{ currentHome.Individual }}</td>
+            <td>{{ currentHome.Score }}</td>
+            <td>{{ currentHome.Site }}</td>
+        </tr>
+    </tbody>
+</table>
+<!--    <input type="text" ng-model="search" />
     <ul ng-repeat="currentHome in homes | orderByPriority | filter:search">
         <li><a href="{{ key }}">{{ currentHome.Site }}</a></li>
     </ul> -->
-</div>
 <!-- <div id="calendar"> </div> -->

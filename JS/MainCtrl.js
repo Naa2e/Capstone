@@ -10,7 +10,7 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "$http",
         $scope.sortType = 'Site';
         $scope.sortReverse = false;
         $scope.searchSite = ' ';
-        console.log('$scope.sortType', $scope.sortType)
+        console.log('$scope.searchSite', $scope.searchSite)
 
 
         var homesArray = []
