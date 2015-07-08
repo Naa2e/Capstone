@@ -5,7 +5,7 @@ app.config(function($routeProvider) {
         templateUrl: "Partials/home.html",
         controller: "MainCtrl"
     })
-    .when("#", {
+    .when("#/", {
         templateUrl: "Partials/home.html",
         controller: "MainCtrl"
     });

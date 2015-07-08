@@ -19,14 +19,15 @@
                 Date
             </td>
             <td>
-                <a href="#" ng-click="sortType = 'Individual'; sortReverse = !sortReverse">
-                    <span ng-show="sortType == 'Individual'" class="fa fa-caret-down"></span> Individual
+                <a href="#/" ng-click="sortType = 'Individual'; sortReverse = !sortReverse">
+                    Individual
+                    <span ng-show="sortType == 'Individual'" class="fa fa-caret-down"></span>
             </td>
             <td>
                 Score
             </td>
             <td>
-                <a href="#" ng-click="sortType = 'Site'; sortReverse = !sortReverse">
+                <a href="#/" ng-click="sortType = 'Site'; sortReverse = !sortReverse">
                 Site
                 <span ng-show="sortType == 'Site'" class="fa fa-caret-down"></span></a>
             </td>
@@ -41,8 +42,3 @@
         </tr>
     </tbody>
 </table>
-<!--    <input type="text" ng-model="search" />
-    <ul ng-repeat="currentHome in homes | orderByPriority | filter:search">
-        <li><a href="{{ key }}">{{ currentHome.Site }}</a></li>
-    </ul> -->
-<!-- <div id="calendar"> </div> -->
