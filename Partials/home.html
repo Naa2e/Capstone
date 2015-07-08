@@ -4,6 +4,14 @@
     <p>Sort Reverse: {{ sortReverse }}</p>
     <p>Whachu looking 4: {{ searchSite }}</p>
 </div>
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Search da Sites" ng-model="searchSite">
+        </div>
+    </div>
+</form>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -11,22 +19,21 @@
                 Date
             </td>
             <td>
-                <a href="#" ng-click="sortType = 'Individual'">
-                Individual
-                <span ng-show="sortType == 'Individual'" class="fa fa-caret-down"></span>
+                <a href="#" ng-click="sortType = 'Individual'; sortReverse = !sortReverse">
+                    <span ng-show="sortType == 'Individual'" class="fa fa-caret-down"></span> Individual
             </td>
             <td>
                 Score
             </td>
             <td>
-                <a href="#" ng-click="sortType = 'Site'">
+                <a href="#" ng-click="sortType = 'Site'; sortReverse = !sortReverse">
                 Site
                 <span ng-show="sortType == 'Site'" class="fa fa-caret-down"></span></a>
             </td>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="currentHome in homes" | orderBy:sortType:sortReverse>
+        <tr ng-repeat="currentHome in homes" | orderBy:sortType:sortReverse | searchSite>
             <td>{{ currentHome.Date }}</td>
             <td>{{ currentHome.Individual }}</td>
             <td>{{ currentHome.Score }}</td>
