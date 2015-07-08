@@ -1,44 +1,61 @@
-<h1>Residential Sleep Life</h1>
-<div class="alert alert-info">
-    <p>Sort by: {{ sortType }}</p>
+<h1>Residential</h1>
+ <div class="alert alert-info">
+    <p>Sort Type: {{ sortType }}</p>
     <p>Sort Reverse: {{ sortReverse }}</p>
-    <p>Whachu looking 4: {{ searchSite }}</p>
-</div>
-<form>
+    <p>Search Query: {{ searchSite }}</p>
+  </div>
+
+  <form>
     <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input type="text" class="form-control" placeholder="Search da Sites" ng-model="searchSite">
-        </div>
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Search da Site" ng-model="searchSite">
+      </div>
     </div>
-</form>
-<table class="table table-bordered table-striped">
+  </form>
+
+  <table class="table table-bordered table-striped">
+
     <thead>
-        <tr>
-            <td>
-                Date
-            </td>
-            <td>
-                <a href="#/" ng-click="sortType = 'Individual'; sortReverse = !sortReverse">
-                    Individual
-                    <span ng-show="sortType == 'Individual'" class="fa fa-caret-down"></span>
-            </td>
-            <td>
-                Score
-            </td>
-            <td>
-                <a href="#/" ng-click="sortType = 'Site'; sortReverse = !sortReverse">
-                Site
-                <span ng-show="sortType == 'Site'" class="fa fa-caret-down"></span></a>
-            </td>
-        </tr>
+      <tr>
+        <td>
+          <a href="#/" ng-click="sortType = 'Date'; sortReverse = !sortReverse">
+            Date
+            <span ng-show="sortType == 'Date' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Date' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#/" ng-click="sortType = 'Individual'; sortReverse = !sortReverse">
+          Individual
+            <span ng-show="sortType == 'Individual' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Individual' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#/" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+          Score
+            <span ng-show="sortType == 'Score' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Score' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#/" ng-click="sortType = 'Site'; sortReverse = !sortReverse">
+          Site
+            <span ng-show="sortType == 'Site' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'Site' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+      </tr>
     </thead>
+
     <tbody>
-        <tr ng-repeat="currentHome in homes" | orderBy:sortType:sortReverse | searchSite>
-            <td>{{ currentHome.Date }}</td>
-            <td>{{ currentHome.Individual }}</td>
-            <td>{{ currentHome.Score }}</td>
-            <td>{{ currentHome.Site }}</td>
-        </tr>
+      <tr ng-repeat="curretHome in homes | orderBy:sortType:sortReverse | filter:searchSite">
+        <td>{{ curretHome.Date }}</td>
+        <td>{{ curretHome.Individual }}</td>
+        <td>{{ curretHome.Score}}</td>
+        <td>{{ curretHome.Site }}</td>
+      </tr>
     </tbody>
-</table>
+
+  </table>

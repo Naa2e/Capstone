@@ -13,7 +13,7 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "$http",
         console.log('$scope.searchSite', $scope.searchSite)
 
 
-        var homesArray = []
+
 
         // the $firebaseArray service properly handles Firebase database queries as well
         // $scope.filteredHomes = $firebaseArray(homesRef);
