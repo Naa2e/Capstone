@@ -11,13 +11,17 @@
                 Date
             </td>
             <td>
+                <a href="#" ng-click="sortType = 'Individual'">
                 Individual
+                <span ng-show="sortType == 'Individual'" class="fa fa-caret-down"></span>
             </td>
             <td>
                 Score
             </td>
             <td>
+                <a href="#" ng-click="sortType = 'Site'">
                 Site
+                <span ng-show="sortType == 'Site'" class="fa fa-caret-down"></span></a>
             </td>
         </tr>
     </thead>
