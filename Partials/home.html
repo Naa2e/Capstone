@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="currentHome in homes">
+        <tr ng-repeat="currentHome in homes" | orderBy:sortType:sortReverse>
             <td>{{ currentHome.Date }}</td>
             <td>{{ currentHome.Individual }}</td>
             <td>{{ currentHome.Score }}</td>
